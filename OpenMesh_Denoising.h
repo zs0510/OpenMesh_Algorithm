@@ -1,8 +1,10 @@
 #pragma once
 #include <Eigen/Core>
-#include <Kernel/iGame_OpenMesh.h>
-#include <Surface_Algorithm/AABB_Tree.h>
 #include <omp.h>
+#include "OpenMesh_Typedef.h"
+
+// Author: Zhang Sheng
+// Reference: Bilateral Normal Filtering for Mesh Denoising - zheng2011
 
 class iGame_OpenMesh_Denoising {
 public:

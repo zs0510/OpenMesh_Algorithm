@@ -1,10 +1,13 @@
 #pragma once
 #include <Eigen/Core>
 #include <Eigen/Dense>
-#include <Kernel/iGame_OpenMesh.h>
 #include <queue>
 #include <omp.h>
 #include <time.h>
+#include "OpenMesh_Typedef.h"
+
+// Author: Zhang Sheng
+// Reference: A New Mesh Simplification Algorithm based on QEM
 
 struct CollapseNode {
 	double cost;

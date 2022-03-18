@@ -1,6 +1,6 @@
 #pragma once
-#include <Kernel/iGame_OpenMesh.h>
 #include <omp.h>
+#include "OpenMesh_Typedef.h"
 
 class iGame_OpenMesh_Smoother {
 private:
@@ -9,5 +9,5 @@ public:
 	iGame_OpenMesh_Smoother(iGame_OpenMesh_TriMesh& _mesh): mesh(_mesh) {
 	
 	}
-	void smoothing(size_t iter_times);// average smoothing
+	void smoothing(size_t iter_times);// Laplacian Smoothing
 };

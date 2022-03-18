@@ -1,8 +1,8 @@
 #pragma once
 #include <Eigen/Core>
-#include <Kernel/iGame_OpenMesh.h>
 #include <Surface_Algorithm/AABB_Tree.h>
 #include <omp.h>
+#include "OpenMesh_Typedef.h"
 
 class iGame_OpenMesh_Remeshing {
 private:
