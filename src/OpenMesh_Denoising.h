@@ -21,7 +21,7 @@ private:
 	OpenMesh::FPropHandleT<OM_Vec> normals;
 	OpenMesh::FPropHandleT<OM_Vec> new_normals;
 	double sigma_normal = 0.5f, sigma_centroid = 0.f;
-	size_t iter_normal = 15, iter_vex = 5;
+	size_t iter_normal = 5, iter_vex = 15;
 	void initMeshData();
 	void BilateralNormalFiltering();
 	void VertexUpdating();

@@ -1,6 +1,6 @@
 #pragma once
 #include <Eigen/Core>
-#include <Surface_Algorithm/AABB_Tree.h>
+#include "Tools/AABB_Tree.h"
 #include <omp.h>
 #include "OpenMesh_Typedef.h"
 
