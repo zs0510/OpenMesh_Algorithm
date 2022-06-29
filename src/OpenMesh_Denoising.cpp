@@ -78,7 +78,7 @@ void iGame_OpenMesh_Denoising::BilateralNormalFiltering() {
 				}
 			}
 			double weight_sum = 0.f;
-			mesh.property(normals, fh).vectorize(0.f);
+			mesh.property(new_normals, fh).vectorize(0.f);
 			for (auto& adjfh : adjfhs) {
 				double delta_centroid = (mesh.property(centroids, fh) - mesh.property(centroids, adjfh)).norm();
 				double delta_normal = (mesh.property(normals, fh) - mesh.property(normals, adjfh)).norm();
