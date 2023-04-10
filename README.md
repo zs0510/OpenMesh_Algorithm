@@ -7,8 +7,8 @@
 
 ### 去噪
 
-![denoising_0](.\image\denoising_0.png)
+![denoising_0](https://github.com/zs0510/OpenMesh_Algorithm/blob/main/image/denoising_0.png)
 
 ### 简化
 
-![simplification_0](.\image\simplification_0.png)
+![simplification_0](https://github.com/zs0510/OpenMesh_Algorithm/blob/main/image/simplification_0.png)
