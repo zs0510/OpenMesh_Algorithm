@@ -29,15 +29,15 @@ public:
 		copy(V);
 	}
 	//////////////////////////////////////////////////////////////////////////
-	TinyVector(char *s)
-	{
-		std::istringstream ins(s);
-
-		for (int i = 0; i < N; i++)
-		{
-			ins >> data_[i];
-		}
-	}
+//	TinyVector(char *s)
+//	{
+//		std::istringstream ins(s);
+//
+//		for (int i = 0; i < N; i++)
+//		{
+//			ins >> data_[i];
+//		}
+//	}
 	//////////////////////////////////////////////////////////////////////////
 	TinyVector(const T x, const T y)
 	{

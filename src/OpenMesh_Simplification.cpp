@@ -49,7 +49,7 @@ void iGame_OpenMesh_Simplification::simplification_qem(size_t target_vcnt) {
 			
 			//std::cout << "HEH #" << heh << " is collapse OK." << std::endl;
 
-			// Çå³ýÎÞÐ§µÄÊÕËõÐÅÏ¢
+			// æ¸…é™¤æ— æ•ˆçš„æ”¶ç¼©ä¿¡æ¯
 			for (auto* _node : mesh.property(collapse_nodes, vh_remove)) {
 				_node->valid = false;
 			}
@@ -60,15 +60,15 @@ void iGame_OpenMesh_Simplification::simplification_qem(size_t target_vcnt) {
 			mesh.property(collapse_nodes, vh_keep).clear();
 			//std::cout << "Invalidate outdated collapse nodes success." << std::endl;
 
-			// ÀÛ¼ÓÎó²î¾ØÕó
+			// ç´¯åŠ è¯¯å·®çŸ©é˜µ
 			mesh.property(error_mats, vh_keep) += mesh.property(error_mats, vh_remove);
-			// ÉèÖÃÌ®ËúÎ»ÖÃ
+			// è®¾ç½®åå¡Œä½ç½®
 			mesh.set_point(vh_keep, node->pos);
 			
 			/*std::cout << "VH #" << vh_keep << ": " << mesh.valence(vh_keep) << ", VH #" << vh_remove << ": " << mesh.valence(vh_remove) 
 				<< "; heh to vertex: VH #" << mesh.to_vertex_handle(heh) << std::endl;*/
 
-			// ±ßÊÕËõ
+			// è¾¹æ”¶ç¼©
 			mesh.collapse(heh);
 
 			//assert(mesh.is_valid_handle(vh_keep) && "vh_keep should be valid!");
@@ -135,7 +135,7 @@ void iGame_OpenMesh_Simplification::calc_collapse_cost(OM_EH eh) {
 	OM_HEH heh = mesh.halfedge_handle(eh, 0);
 	const auto& vh0 = mesh.from_vertex_handle(heh);
 	const auto& vh1 = mesh.to_vertex_handle(heh);
-	Eigen::Vector4d X;// ×î¼ÑÐÂ¶¥µãÎ»ÖÃ
+	Eigen::Vector4d X;// æœ€ä½³æ–°é¡¶ç‚¹ä½ç½®
 	Eigen::Matrix4d Q = mesh.property(error_mats, vh0) + mesh.property(error_mats, vh1);
 	Eigen::Matrix4d A;
 	A << Q(0, 0), Q(0, 1), Q(0, 2), Q(0, 3),
@@ -144,12 +144,12 @@ void iGame_OpenMesh_Simplification::calc_collapse_cost(OM_EH eh) {
 		0.f, 0.f, 0.f, 1.f;
 
 	if (A.determinant()) {
-		// A ¿ÉÄæ£¬¿ÉÍ¨¹ý½â·½³Ì»ñÈ¡×î¼ÑÎ»ÖÃ
+		// A å¯é€†ï¼Œå¯é€šè¿‡è§£æ–¹ç¨‹èŽ·å–æœ€ä½³ä½ç½®
 		Eigen::Vector4d b(0.f, 0.f, 0.f, 1.f);
 		X = A.colPivHouseholderQr().solve(b);
 		cost = X.transpose() * Q * X;
 	} else {
-		// A ²»¿ÉÄæ£¬ÔÚ Ïß¶Î v1-v2 ÉÏÑ°ÕÒ¾Ö²¿×î¼ÑÎ»ÖÃ
+		// A ä¸å¯é€†ï¼Œåœ¨ çº¿æ®µ v1-v2 ä¸Šå¯»æ‰¾å±€éƒ¨æœ€ä½³ä½ç½®
 		auto& v0 = mesh.point(vh0);
 		auto& v1 = mesh.point(vh1);
 		for (double i = 0.f; i <= 1.f; i += 0.05f) {

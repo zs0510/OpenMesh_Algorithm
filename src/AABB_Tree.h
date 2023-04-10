@@ -51,10 +51,10 @@ struct AABBNode
 	unsigned int m_nNumVerts; //num of vertices stored (3->n) 
 	AABB m_box;
 
-	AABBNode::AABBNode(std::vector<Vertex>& vertexList, std::vector<int>& face_id_list, AABBTreeInfo& treeInfo, int depth);
-	int AABBNode::FindBestAxis(std::vector<Vertex>& vertexList);
-	void AABBNode::SetBounds(AABB box);
-	void AABBNode::BuildTree(std::vector<Vertex>& vertexList, std::vector<int>& face_id_list, AABBTreeInfo& treeInfo, int depth);
+	AABBNode(std::vector<Vertex>& vertexList, std::vector<int>& face_id_list, AABBTreeInfo& treeInfo, int depth);
+	int FindBestAxis(std::vector<Vertex>& vertexList);
+	void SetBounds(AABB box);
+	void BuildTree(std::vector<Vertex>& vertexList, std::vector<int>& face_id_list, AABBTreeInfo& treeInfo, int depth);
 };
 
 

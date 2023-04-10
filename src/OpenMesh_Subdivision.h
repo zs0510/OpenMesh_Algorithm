@@ -20,7 +20,7 @@ private:
 	//OpenMesh::EPropHandleT<OM_VH> edge_vh;
 	OpenMesh::HPropHandleT<OM_VH> edge_vh;
 
-	void init_weight_tables();// ³õÊ¼»¯Ï¸·ÖÄ£°åÖĞ¸÷µãµÄÈ¨Öµ
+	void init_weight_tables();// åˆå§‹åŒ–ç»†åˆ†æ¨¡æ¿ä¸­å„ç‚¹çš„æƒå€¼
 
 	void generate_edge_vertex();
 
